@@ -26,7 +26,7 @@ Date::~Date() {}; // Destructor
 void Date::setDate(int m, int d, int y)
 {
     // Find the number of days in the month selected
-    int lastDayOfMonth = lastDay();
+    int lastDayOfMonth = lastDay(m, y);
 
     if ((y > 0 && m > 0 && d > 0) && (m <= 12 && d <= lastDayOfMonth)) // Ensures input within the minimum and maximum values. Year has no max.
     {
