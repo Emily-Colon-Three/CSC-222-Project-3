@@ -48,5 +48,14 @@ int main()
     dateFour.setDate(2, 28, 2026); // Valid
     cout << dateFour.getFormatDMY() << endl;
 
+    // Accessor function testing
+    cout << dateOne.getDay() << endl;
+    cout << dateOne.getMonth() << endl;
+    cout << dateOne.getYear() << endl;
+
+    cout << dateTwo.getDay() << endl;
+    cout << dateTwo.getMonth() << endl;
+    cout << dateTwo.getYear() << endl;
+
     return 0;
 }
