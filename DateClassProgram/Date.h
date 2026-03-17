@@ -1,5 +1,6 @@
 #ifndef DATE_H
 #define DATE_H
+#include <string>
 
 class Date {
 private: // Private data members
@@ -34,7 +35,9 @@ public:
     int lastDay() const;
     int lastDay(int m, int y) const;
 
-
+    std::string getFormatMDY_num() const;
+    std::string getFormatMDY_char() const;
+    std::string getFormatDMY() const;
 };
 
 #endif // DATE_H

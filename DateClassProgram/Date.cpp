@@ -16,7 +16,10 @@ const int OCTOBER = 31;
 const int NOVEMBER = 30;
 const int DECEMBER = 31;
 
-Date::Date(int year, int month, int day) : year(1900), month(1), day(1) {} // Default date is January 1st, 1900.
+Date::Date(int year, int month, int day) : year(1900), month(1), day(1) // Default date is January 1st, 1900.
+{
+    setDate(month, day, year);
+}
 
 Date::~Date() {}; // Destructor
 
