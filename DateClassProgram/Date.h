@@ -12,21 +12,27 @@ public:
     ~Date(); // Destructor
 
     // Inline accessor functions
-    inline int getYear()
+    inline int getYear() const
     {
         return year;
     }
-    inline int getMonth()
+    inline int getMonth() const
     {
         return month;
     }
-    inline int getDay()
+    inline int getDay() const
     {
         return day;
     }
 
     // Member function prototypes
     void setDate(int m, int d, int y);
+
+    bool isLeapYear() const;
+    bool isLeapYear(int y) const;
+
+    int lastDay() const;
+    int lastDay(int m, int y) const;
 
 
 };
