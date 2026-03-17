@@ -1,5 +1,6 @@
 #include "Date.h"
 #include <string>
+#include <sstream>
 
 // Constants for month lengths (Non-leap)
 const int JANUARY = 31;
@@ -62,7 +63,7 @@ bool Date::isLeapYear() const
 
 bool Date::isLeapYear(int y) const
 {
-    bool leapYear = false;
+    bool leapYear = false; // By default, most years are not leap years
 
     if (y % 4 == 0)
     {
@@ -70,12 +71,12 @@ bool Date::isLeapYear(int y) const
         {
             if (y % 400 == 0)
             {
-                leapYear = true;
+                leapYear = true; // If divisible by 100 but also 400
             }
         }
         else
         {
-            leapYear = true;
+            leapYear = true; // If divisible by 4, but not 100
         }
     }
 
@@ -198,4 +199,121 @@ int Date::lastDay(int m, int y) const
     {
         return DECEMBER;
     }
+}
+
+std::string Date::getFormatMDY_num() const
+{
+    std::stringstream ss;
+    ss << Date::month << "/" << Date::day << "/" << Date::year;
+
+    std::string format = ss.str();
+    return format;
+}
+
+std::string Date::getFormatMDY_char() const
+{
+    std::string monthName;
+
+    switch (Date::month)
+    {
+    case 1:
+        monthName = "January";
+        break;
+    case 2:
+        monthName = "February";
+        break;
+    case 3:
+        monthName = "March";
+        break;
+    case 4:
+        monthName = "April";
+        break;
+    case 5:
+        monthName = "May";
+        break;
+    case 6:
+        monthName = "June";
+        break;
+    case 7:
+        monthName = "July";
+        break;
+    case 8:
+        monthName = "August";
+        break;
+    case 9:
+        monthName = "September";
+        break;
+    case 10:
+        monthName = "October";
+        break;
+    case 11:
+        monthName = "November";
+        break;
+    case 12:
+        monthName = "December";
+        break;
+    default:
+        exit(1); // Should not be possible to have an invalid month number
+    }
+
+    std::stringstream ss;
+    ss << monthName << " " << Date::day << ", " << Date::year;
+
+    std::string format = ss.str();
+
+    return format;
+}
+
+std::string Date::getFormatDMY() const
+{
+    std::string monthName;
+
+    switch (Date::month)
+    {
+    case 1:
+        monthName = "January";
+        break;
+    case 2:
+        monthName = "February";
+        break;
+    case 3:
+        monthName = "March";
+        break;
+    case 4:
+        monthName = "April";
+        break;
+    case 5:
+        monthName = "May";
+        break;
+    case 6:
+        monthName = "June";
+        break;
+    case 7:
+        monthName = "July";
+        break;
+    case 8:
+        monthName = "August";
+        break;
+    case 9:
+        monthName = "September";
+        break;
+    case 10:
+        monthName = "October";
+        break;
+    case 11:
+        monthName = "November";
+        break;
+    case 12:
+        monthName = "December";
+        break;
+    default:
+        exit(1); // Should not be possible to have an invalid month number
+    }
+
+    std::stringstream ss;
+    ss << Date::day << " " << monthName << ", " << Date::year;
+
+    std::string format = ss.str();
+
+    return format;
 }
