@@ -72,3 +72,15 @@ double NumberArray::getAverage() const
 
     return average; // Average, now found, is returned.
 }
+
+void NumberArray::print() const
+{
+    for (int i = 0; i < NumberArray::size; i++)
+    {
+        std::cout << NumberArray::data[i] << " "; // Prints out elements with space between them
+    }
+
+    std::cout << std::endl; // Adds a final return
+
+    return;
+}
