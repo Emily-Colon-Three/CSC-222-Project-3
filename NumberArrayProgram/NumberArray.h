@@ -6,7 +6,7 @@ private:
     int size;
     double* data;
 
-    NumberArray(int);
+    NumberArray();
     ~NumberArray();
 
     void setNumber(int, double);
