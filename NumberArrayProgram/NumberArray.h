@@ -6,6 +6,7 @@ private:
     int size;
     double* data;
 
+public:
     NumberArray();
     ~NumberArray();
 

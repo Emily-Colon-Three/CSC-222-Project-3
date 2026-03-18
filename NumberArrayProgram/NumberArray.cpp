@@ -1,5 +1,4 @@
 #include "NumberArray.h"
-#include <random>
 #include <iostream>
 
 const int DEFAULT_SIZE = 10;
@@ -8,7 +7,9 @@ NumberArray::NumberArray()
 {
     NumberArray::data = new double[DEFAULT_SIZE]; // Dynamically allocates memory according to given size.
 
-    for (int i = 0; i < size; i++)
+    NumberArray::size = DEFAULT_SIZE;
+
+    for (int i = 0; i < NumberArray::size; i++)
     {
         NumberArray::data[i] = 0.0; // Assigns value to default for all indices in the array
     }
@@ -81,6 +82,4 @@ void NumberArray::print() const
     }
 
     std::cout << std::endl; // Adds a final return
-
-    return;
 }
