@@ -5,9 +5,21 @@ const int DEFAULT_SIZE = 10;
 
 NumberArray::NumberArray()
 {
-    NumberArray::data = new double[DEFAULT_SIZE]; // Dynamically allocates memory according to given size.
-
     NumberArray::size = DEFAULT_SIZE;
+
+    NumberArray::data = new double[size]; // Dynamically allocates memory according to given size.
+
+    for (int i = 0; i < NumberArray::size; i++)
+    {
+        NumberArray::data[i] = 0.0; // Assigns value to default for all indices in the array
+    }
+}
+
+NumberArray::NumberArray(int s = DEFAULT_SIZE) // s means size in this case
+{
+    NumberArray::size = s;
+
+    NumberArray::data = new double[size]; // Dynamically allocates memory according to given size.
 
     for (int i = 0; i < NumberArray::size; i++)
     {

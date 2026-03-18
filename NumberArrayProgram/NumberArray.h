@@ -7,14 +7,22 @@ private:
     double* data;
 
 public:
-    NumberArray();
+    NumberArray(); // Overloaded, this one has no parameters.
+    NumberArray(int);
     ~NumberArray();
 
     void setNumber(int, double);
 
     inline double getNumber(int index)
     {
-        return data[index];
+        if (index < size && index >= 0) // Index validation
+        {
+            return data[index];
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     double getMin() const;
